@@ -1,0 +1,17 @@
+@media screen and (max-width: 900px) {
+    #app {
+        margin: 0 8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #app {
+        margin: 0 4rem;
+    }
+}
+
+@media screen and (max-width: 582px) {
+    #app {
+        margin: 0 1rem;
+    }
+}

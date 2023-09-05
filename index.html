@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site para listar seus perfis favoritos do GitHub">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="./js/main.js" defer></script>
+
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/medias.css">
+    <title>GitFav</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 class="sr-only">GitFav</h1>
+            <img class="logo" src="./assets/logo.svg" alt="Logo do GitFav">
+            <div id="search">
+                <label class="sr-only" for="input-search">Digite o GitHub username que quer favoritar</label>
+                <input type="text" name="input-search" id="input-search" placeholder="Digite o GitHub username que quer favoritar">
+                <button>Favoritar</button>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Repositories</th>
+                    <th>Followers</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/Michelle-Laignier.png" alt="Imagem de perfil de Michelle">
+                        <a href="https://github.com/Michelle-Laignier" target="_blank">
+                            <p>Michelle Laignier</p>
+                            <span>Michelle-Laignier</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        27
+                    </td>
+                    <td class="followers">
+                        4
+                    </td>
+                    <td>
+                        <button class="remove">Remover</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/diego3g.png" alt="Imagem de perfil de Michelle">
+                        <a href="https://github.com/diego3g" target="_blank">
+                            <p>Diego Fernandes</p>
+                            <span>diego3g</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        27
+                    </td>
+                    <td class="followers">
+                        4
+                    </td>
+                    <td>
+                        <button class="remove">Remover</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/maykbrito.png" alt="Imagem de perfil de Michelle">
+                        <a href="https://github.com/maykbrito" target="_blank">
+                            <p>Mayk Brito</p>
+                            <span>maykbrito</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        27
+                    </td>
+                    <td class="followers">
+                        4
+                    </td>
+                    <td>
+                        <button class="remove">Remover</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+@import url(./table.css);
+
+:root {
+    font-size: 62.5%;
+
+    --button-bg: #065E7C;
+    --button-bg-hover: #0889b4;
+    --button-text-color: #FFFFFF;
+
+    --button-remove: #F75A68;
+    --button-remove-hover: #bc2532;
+
+    --input-bg: #0a3c46;
+    --input-text-color: #a9a9b9;
+
+    --table-text-color: #E1E1E6;
+    --table-row-even: #06181C; /*even: par*/
+    --table-row-odd: #06161B80; /*odd: ímpar*/
+    --table-thead-bg: #092D38;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle, rgba(72,154,172,1) 0%, rgba(4,60,79,1) 100%);
+    color: white;
+    min-height: 200vh;
+}
+
+body, input, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+#app {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 16rem;
+}
+
+header {
+    display: flex;
+    margin: 11.5rem auto 8.7rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header img {
+    cursor: pointer;
+}
+
+#search {
+    display: flex;
+    gap: 8px;
+}
+
+#search input {
+    background: var(--input-bg);
+    border: none;
+    border-radius: 5px;
+    color: var(--input-text-color);
+    padding: 1.6rem;
+    transition: 0.2s all;
+    width: 25vw;
+}
+
+#search input:hover,
+#search input:focus {
+    outline: 2px solid white;
+    box-shadow: #0889b4 0px 0px 12px 5px;
+}
+
+#search button {
+    background: var(--button-bg);
+    border: none;
+    border-radius: 5px;
+    color: var(--button-text-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1.2rem 3.2rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+
+    background-image: url(../assets/star-small.svg);
+    background-repeat: no-repeat;
+    background-position: 2rem;
+    padding-left: 5rem;
+}
+
+#search button:hover {
+    background-color: var(--button-bg-hover);
+    cursor: pointer;
+}
+
+.sr-only {
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--input-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--button-bg);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--button-bg-hover);
+}

@@ -1,0 +1,86 @@
+table {
+    background: var(--table-thead-bg);
+    border: 1px solid #4A808C;
+    border-collapse: collapse;
+    border-radius: 12px;
+    color: var(--table-text-color);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 160%;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+thead {
+    padding: 1.6rem 0;
+    text-align: left;
+}
+
+thead tr th:first-child {
+    padding-left: 4rem;
+    width: 50%;
+}
+
+tr th {
+    padding: 1.6rem 0;
+}
+
+.user {
+    align-items: center;
+    display: flex;
+    padding: 2.4rem 0 2.4rem 4rem;
+}
+
+.user img {
+    border-radius: 50%;
+    height: 5.6rem;
+    width: 5.6rem;
+}
+
+.user a {
+    margin-left: 1.6rem;
+    text-decoration: none;
+}
+
+.user p,
+.user span {
+    color: var(--table-text-color);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 160%; /* 32px */
+}
+
+.user span {
+    font-weight: 400;
+}
+
+.user p:hover,
+.user span:hover {
+    text-decoration: underline;
+}
+
+.remove {
+    background: transparent;
+    border: none;
+    color: var(--button-remove);
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 160%; /* 32px */
+    transition: 0.2s;
+}
+
+.remove:hover {
+    color: var(--button-remove-hover);
+}
+
+/*even: par // odd: ímpar */
+tbody tr:nth-child(odd) {
+    background: var(--table-row-odd);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--table-row-even);
+    border-top: 2px solid #4A808C;
+    border-bottom: 1px solid #4A808C;
+}
