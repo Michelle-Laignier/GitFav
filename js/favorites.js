@@ -1,24 +1,20 @@
+import { GitHubUser } from "./GitHubUser.js"
+
 export class FavoritesData {
     constructor(root) {
         this.root = document.querySelector(root)
         this.load()
+        this.add()
+    }
+
+    async add(username) {
+        const user = await GitHubUser.search(username)
+
+        console.log(user);
     }
 
     load() {
-        this.entries = [
-            {
-                login: "Michelle-Laignier",
-                name: "Michelle Laignier",
-                public_repos: 28,
-                followers: 4
-            },
-            {
-                login: "diego3g",
-                name: "Diego Fernandes",
-                public_repos: 280,
-                followers: 4000
-            }
-        ]
+        this.entries = JSON.parse(localStorage.getItem("users")) || []
     }
 
     delete(user) {
@@ -35,6 +31,7 @@ export class FavoritesHtml extends FavoritesData {
         this.tbody = this.root.querySelector("tbody")
 
         this.update()
+        this.htmlAdd()
     }
 
     update() {
@@ -58,6 +55,15 @@ export class FavoritesHtml extends FavoritesData {
             })
             this.tbody.append(row)
         })
+    }
+
+    htmlAdd() {
+        const favButton = this.root.querySelector("#search button")
+        favButton.addEventListener("click", () => {
+            const { value } = this.root.querySelector("#input-search")
+            this.add(value)
+        })
+
     }
 
     createRow() {
