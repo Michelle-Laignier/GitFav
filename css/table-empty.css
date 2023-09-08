@@ -1,0 +1,21 @@
+.empty {
+    align-items: center;
+    background: var(--input-bg);
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    gap: 6rem;
+    height: 50vh;
+    justify-content: center;
+    width: 201%;
+}
+
+.empty img {
+    scale: 2;
+}
+
+.empty p {
+    color: var(--table-empty-text);
+    font-family: var(--font-table-empty);
+    font-size: 4rem;
+    font-weight: 700;
+}

@@ -1,7 +1,11 @@
 @import url(./table.css);
+@import url(./table-empty.css);
 
 :root {
     font-size: 62.5%;
+
+    --font: 'Roboto', sans-serif;
+    --font-table-empty: 'Roboto Mono', monospace;
 
     --button-bg: #065E7C;
     --button-bg-hover: #0889b4;
@@ -17,6 +21,8 @@
     --table-row-even: #06181C; /*even: par*/
     --table-row-odd: #06161B80; /*odd: ímpar*/
     --table-thead-bg: #092D38;
+
+    --table-empty-text: #4E5455;
 }
 
 * {
@@ -32,7 +38,7 @@ body {
 }
 
 body, input, button {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font);
     font-weight: 400;
 }
 
@@ -103,6 +109,10 @@ header img {
     overflow: hidden;
     position: absolute;
     width: 1px;
+}
+
+.hide {
+    display: none;
 }
 
 ::-webkit-scrollbar {
