@@ -8,19 +8,58 @@ export class FavoritesData {
     }
 
     async add(username) {
-        const user = await GitHubUser.search(username)
+        try {
+            const userAlreadyExists = this.entries.find(entry => entry.login === username)
 
-        console.log(user);
+            if(username == undefined) {
+                return
+            }
+
+            if(userAlreadyExists) {
+                throw new Error("Usuário já cadastrado")
+            }
+
+            const user = await GitHubUser.search(username)
+            console.log(user);
+
+            if(user.login == undefined) {
+                throw new Error("Usuário não encontrado")
+            }
+
+            this.entries = [user, ...this.entries]
+            this.update()
+            this.save()
+            
+        } catch(error) {
+            alert(error.message);
+        }
     }
 
     load() {
         this.entries = JSON.parse(localStorage.getItem("users")) || []
     }
 
+    save() {
+        localStorage.setItem("users", JSON.stringify(this.entries))
+    }
+
     delete(user) {
         const filteredEntries = this.entries.filter(entry => entry.login !== user.login)
         this.entries = filteredEntries
         this.update()
+        this.save()
+    }
+
+    emptyTableVerify() {
+        const empty = document.querySelector(".empty")
+        const tbody = document.querySelector("tbody")
+        if(this.entries.length <= 0) {
+            empty.classList.remove("hide")
+            tbody.append(empty)
+        } else {
+            empty.classList.add("hide")
+        }
+        
     }
 }
 
@@ -35,13 +74,17 @@ export class FavoritesHtml extends FavoritesData {
     }
 
     update() {
+        this.emptyTableVerify()
+        
         this.removeAllTr()
 
         this.entries.forEach(user => {
             const row = this.createRow()
 
-            row.querySelector(".user img")
-            row.querySelector(".user a")
+            row.querySelector(".user img").src = `https://github.com/${user.login}.png`
+            row.querySelector(".user img").alt = `Foto de perfil de ${user.name}`
+
+            row.querySelector(".user a").href = `https://github.com/${user.login}`
             row.querySelector(".user p").textContent = user.name
             row.querySelector(".user span").textContent = user.login
             row.querySelector(".repositories").textContent = user.public_repos
