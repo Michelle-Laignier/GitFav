@@ -8,10 +8,49 @@
     #app {
         margin: 0 4rem;
     }
+
+    header {
+        flex-direction: column;
+    }
+
+    .logo {
+        height: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    #search {
+        flex-direction: column;
+    }
+
+    #search input {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 582px) {
     #app {
         margin: 0 1rem;
+    }
+
+    table {
+        border-collapse: inherit;
+        text-align: center;
+    }
+
+    thead {
+        text-align: center;
+    }
+
+    .empty {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .empty img {
+        scale: 1;
+    }
+
+    .empty p {
+        font-size: 2rem;
     }
 }
